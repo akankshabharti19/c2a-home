@@ -1,18 +1,18 @@
 export const legalSolutions = [
   {
+    id: 1,
     title: "Paraquat Cancer Lawsuit",
-    image: "/images/paraquat.jpg",
   },
   {
+    id: 2,
     title: "Paraquat Lawsuit",
-    image: "/images/paraquat2.jpg",
   },
   {
+    id: 3,
     title: "Hernia Mesh Lawsuit",
-    image: "/images/hernia.jpg",
   },
   {
+    id: 4,
     title: "IVC Filter Lawsuit",
-    image: "/images/ivc.jpg",
   },
 ];

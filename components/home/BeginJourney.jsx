@@ -1,64 +1,74 @@
 export default function BeginJourney() {
   return (
-    <section className="bg-blue-900 py-20">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
+    <section className="bg-white py-32">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
 
-        <div className="text-white">
-          <h2 className="text-4xl font-bold">
-            Begin Your Journey
-          </h2>
-
-          <p className="mt-4 text-blue-100 max-w-md">
-            Start your free case review today. Our team will guide
-            you through every step and fight for the justice you deserve.
-          </p>
-        </div>
-
-        {/* form */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <form className="grid gap-4">
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-900"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-900"
-              />
+          {/* LEFT: Image Card */}
+          <div className="relative">
+            {/* Badge */}
+            <div className="absolute -left-6 -top-6 z-10 rounded-2xl bg-yellow-400 px-4 py-3 font-semibold text-blue-900 shadow-md">
+              No Win,<br />No Fees
             </div>
 
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-900"
-            />
+            {/* Image Placeholder */}
+            <div className="h-[420px] w-full rounded-[32px] bg-slate-200" />
 
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-900"
-            />
+            {/* Icon bubble */}
+            <div className="absolute -bottom-8 right-10 flex h-20 w-20 items-center justify-center rounded-full bg-yellow-400 shadow-lg">
+              🎧
+            </div>
+          </div>
 
-            <textarea
-              placeholder="Tell us about your case"
-              rows="4"
-              className="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-900"
-            ></textarea>
+          {/* RIGHT: Form Card */}
+          <div className="rounded-[32px] bg-white p-10 shadow-xl">
+            <h2 className="text-3xl font-serif text-[#1f3b8b]">
+              Begin Your Journey
+            </h2>
 
-            <button
-              type="button"
-              className="mt-2 bg-yellow-400 text-blue-900 font-semibold py-3 rounded-xl"
-            >
-              Submit Case Review
-            </button>
+            <form className="mt-8 space-y-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-blue-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-blue-500"
+                />
+              </div>
 
-          </form>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-blue-500"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  className="w-full rounded-xl border px-4 py-3 outline-none focus:border-blue-500"
+                />
+              </div>
+
+              <textarea
+                placeholder="How can we help?"
+                rows={4}
+                className="w-full rounded-xl border px-4 py-3 outline-none focus:border-blue-500"
+              />
+
+              <button
+                type="submit"
+                className="mt-4 w-full rounded-full bg-[#0b4da2] py-4 font-semibold text-white transition hover:bg-[#093b7c]"
+              >
+                Get started
+              </button>
+            </form>
+          </div>
+
         </div>
-
       </div>
     </section>
   );

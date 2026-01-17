@@ -1,31 +1,42 @@
 export default function OurMission() {
   return (
-    <section className="bg-blue-50 py-20">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative bg-[#f3f7ff] overflow-hidden">
+      <div className="mx-auto max-w-[1200px] px-6 py-28">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
 
-        <div>
-          <h2 className="text-4xl font-bold text-blue-900">
-            Our Mission
-          </h2>
+          {/* LEFT CONTENT */}
+          <div>
+            <h2 className="text-3xl font-bold text-[#1f3b8b]">
+              Our Mission
+            </h2>
 
-          <p className="mt-4 text-gray-700 max-w-lg">
-            We’re committed to helping individuals seek justice and
-            compensation through accessible, transparent legal support.
-            Our mission is to simplify the process and fight for the
-            outcomes you deserve.
-          </p>
+            <p className="mt-6 text-slate-700 leading-relaxed max-w-xl">
+              We provide free, confidential case reviews to help individuals
+              understand their legal options. Our mission is to connect you
+              with experienced attorneys who fight for justice nationwide.
+            </p>
 
-          <button className="mt-6 bg-blue-900 text-white px-6 py-3 rounded-xl font-medium">
-            Learn More
-          </button>
+            <ul className="mt-6 space-y-3 text-slate-700">
+              <li>• Free and confidential consultations</li>
+              <li>• Serving clients in all states</li>
+              <li>• No fees unless you win</li>
+            </ul>
+
+            <button className="mt-10 rounded-full bg-yellow-400 px-8 py-4 font-semibold text-[#1f3b8b] transition hover:bg-yellow-300">
+              About Us
+            </button>
+          </div>
+
+          <div className="relative hidden lg:block h-[360px]">
+            
+            <div className="absolute right-0 top-0 h-48 w-64 rounded-2xl bg-[#1f3b8b]" />
+
+            <div className="absolute right-24 top-28 h-40 w-56 rounded-2xl bg-yellow-400" />
+
+            <div className="absolute right-10 top-16 h-64 w-72 rounded-2xl bg-blue-200 opacity-40" />
+          </div>
+
         </div>
-
-        <div className="relative h-64 lg:h-80">
-          <div className="absolute top-0 left-0 w-40 h-40 bg-blue-900 rounded-2xl"></div>
-          <div className="absolute bottom-0 right-0 w-48 h-48 bg-yellow-400 rounded-2xl"></div>
-          <div className="absolute inset-10 bg-white rounded-2xl shadow-lg"></div>
-        </div>
-
       </div>
     </section>
   );

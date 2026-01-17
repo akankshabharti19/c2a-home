@@ -1,45 +1,45 @@
 export default function FAQ() {
+  const faqs = [
+    "What are the upfront costs?",
+    "Who will be working on my case?",
+    "Will my information be safe?",
+    "How long will it take to resolve?",
+    "What cases do you handle?",
+  ];
+
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-4xl mx-auto px-4">
+    <section className="bg-white py-32">
+      <div className="mx-auto max-w-[1200px] px-6">
 
-        <h2 className="text-4xl font-bold text-blue-900 text-center">
-          Frequently Asked Questions
-        </h2>
+        {/* Blue Panel */}
+        <div className="rounded-[40px] bg-[#0b4da2] px-12 py-16">
 
-        <div className="mt-12 space-y-4">
+          {/* Title */}
+          <h2 className="text-4xl font-serif text-white">
+            Questions? Contact Us
+          </h2>
 
-          {/* FAQ Item */}
-          <div className="border rounded-xl p-6">
-            <h3 className="font-semibold text-lg text-blue-900">
-              How much does it cost to get started?
-            </h3>
-            <p className="mt-2 text-gray-600">
-              There is no upfront cost. You only pay if we successfully
-              win your case.
-            </p>
-          </div>
+          {/* FAQ Items */}
+          <div className="mt-12 space-y-5">
+            {faqs.map((question, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between rounded-2xl bg-[#083a75] px-8 py-6"
+              >
+                <p className="text-lg text-white">
+                  {question}
+                </p>
 
-          <div className="border rounded-xl p-6">
-            <h3 className="font-semibold text-lg text-blue-900">
-              How long does the legal process take?
-            </h3>
-            <p className="mt-2 text-gray-600">
-              Each case is different, but most claims are resolved
-              within 18–36 months depending on complexity.
-            </p>
-          </div>
-
-          <div className="border rounded-xl p-6">
-            <h3 className="font-semibold text-lg text-blue-900">
-              Do you operate nationwide?
-            </h3>
-            <p className="mt-2 text-gray-600">
-              Yes. We serve clients in all states across the U.S.
-            </p>
+                {/* Plus Button */}
+                <button className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-400 text-2xl font-bold text-blue-900">
+                  +
+                </button>
+              </div>
+            ))}
           </div>
 
         </div>
+
       </div>
     </section>
   );
