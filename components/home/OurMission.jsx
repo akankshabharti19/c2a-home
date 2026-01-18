@@ -1,39 +1,47 @@
+import Image from "next/image";
+
 export default function OurMission() {
   return (
-    <section className="relative bg-[#f3f7ff] overflow-hidden">
-      <div className="mx-auto max-w-[1200px] px-6 py-28">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+    <section className="relative bg-[#f4f7fa] py-28 overflow-hidden">
+      <div className="mx-auto max-w-[1300px] px-6">
+
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
-          <div>
-            <h2 className="text-3xl font-bold text-[#1f3b8b]">
+          <div className="relative z-10">
+            <h2 className="font-serif text-5xl text-blue-900">
               Our Mission
             </h2>
 
-            <p className="mt-6 text-slate-700 leading-relaxed max-w-xl">
-              We provide free, confidential case reviews to help individuals
-              understand their legal options. Our mission is to connect you
-              with experienced attorneys who fight for justice nationwide.
+            <p className="mt-6 max-w-xl text-blue-900/80 leading-relaxed">
+              Free, confidential case reviews. Serving all 35 states. No fees
+              unless you win. Your Path To Justice Starts Here. C2P connects
+              victims with the legal support they need.
             </p>
 
-            <ul className="mt-6 space-y-3 text-slate-700">
-              <li>• Free and confidential consultations</li>
-              <li>• Serving clients in all states</li>
-              <li>• No fees unless you win</li>
-            </ul>
-
-            <button className="mt-10 rounded-full bg-yellow-400 px-8 py-4 font-semibold text-[#1f3b8b] transition hover:bg-yellow-300">
+            <button className="mt-10 inline-flex items-center gap-4 rounded-full bg-yellow-400 px-10 py-4 font-semibold text-blue-900 hover:bg-yellow-300 transition">
               About Us
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-900 text-white">
+                ↗
+              </span>
             </button>
           </div>
 
-          <div className="relative hidden lg:block h-[360px]">
-            
-            <div className="absolute right-0 top-0 h-48 w-64 rounded-2xl bg-[#1f3b8b]" />
+          {/* RIGHT VISUAL AREA */}
+          <div className="relative h-[420px]">
 
-            <div className="absolute right-24 top-28 h-40 w-56 rounded-2xl bg-yellow-400" />
+            {/* Background image  */}
+            <Image
+              src="/images/mission-bg.jpg"
+              alt="Our mission"
+              fill
+              className="object-contain opacity-20"
+            />
 
-            <div className="absolute right-10 top-16 h-64 w-72 rounded-2xl bg-blue-200 opacity-40" />
+            {/* Decorative blocks */}
+            <div className="absolute right-0 top-0 h-40 w-28 rounded-2xl bg-blue-900" />
+            <div className="absolute right-16 top-32 h-48 w-28 rounded-2xl bg-yellow-400" />
+            <div className="absolute right-0 bottom-0 h-44 w-28 rounded-2xl bg-blue-900" />
           </div>
 
         </div>

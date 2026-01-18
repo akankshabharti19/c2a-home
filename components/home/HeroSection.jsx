@@ -1,95 +1,142 @@
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0b3a78]">
-      <div className="relative mx-auto max-w-[1300px] px-6 py-28">
-        
-        {/* Curved blue background panel */}
-        <div className="absolute left-0 top-0 h-full w-[65%] rounded-r-[90px] bg-gradient-to-br from-[#0e5bb5] to-[#083d7a]" />
+    <section className="relative min-h-[90vh] overflow-hidden bg-white">
 
-        <div className="relative grid grid-cols-1 items-center gap-20 lg:grid-cols-[1.3fr_1fr]">
-          
-          {/* LEFT CONTENT */}
-          <div className="relative z-10">
-            <h1 className="font-serif text-5xl leading-tight text-yellow-400 md:text-6xl lg:text-7xl">
-              Empowering
+      {/* RIGHT SIDE BACKGROUND IMAGE*/}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          clipPath: "polygon(60% 0, 100% 0, 100% 100%, 50% 100%)",
+        }}
+      >
+        <Image
+          src="/images/hero_bg.jpg"
+          alt="City background"
+          fill
+          className="object-cover opacity-30"
+          priority
+        />
+      </div>
+
+      {/* LEFT BLUE BACKGROUND */}
+      <div
+        className="absolute inset-0 z-10 bg-gradient-to-br from-[#0b4da2] to-[#083a75]"
+        style={{
+          clipPath: "polygon(0 0, 60% 0, 50% 100%, 0 100%)",
+        }}
+      />
+
+      {/* MAIN CONTENT */}
+      <div className="relative z-20 mx-auto max-w-[1400px] px-6 pt-32 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          {/* LEFT HERO TEXT */}
+          <div className="max-w-xl text-white">
+            <h1 className="font-serif text-5xl leading-tight">
+              <span className="text-yellow-400">Empowering</span>
               <br />
               Justice,
               <br />
-              <span className="text-white">Starting Now</span>
+              Starting Now
             </h1>
 
-            <p className="mt-6 max-w-lg text-lg text-blue-100">
+            <p className="mt-6 text-white/90">
               Talk to an experienced attorney. Available in all states.
               We only get paid if you win.
             </p>
 
-            <button className="mt-10 inline-flex items-center gap-4 rounded-full bg-yellow-400 px-8 py-4 font-semibold text-[#083d7a] transition hover:bg-yellow-300">
+            <button className="mt-10 flex items-center gap-4 rounded-full bg-yellow-400 px-8 py-4 font-semibold text-[#0b4da2] hover:bg-yellow-300 transition">
               Check if You Qualify
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#083d7a] text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b4da2] text-white">
                 →
               </span>
             </button>
           </div>
 
-          {/* RIGHT PANEL */}
-          <div className="relative z-10">
-            <div className="rounded-3xl bg-white p-8 shadow-[0_25px_70px_rgba(0,0,0,0.2)]">
-              
-              {/* Dropdown placeholder */}
-              <div className="mb-6 flex items-center justify-between rounded-lg border px-4 py-2 text-sm text-slate-600">
-                Asbestos Exposure Claims
-                <span className="text-lg">⌄</span>
+          {/* RIGHT STATS CARD */}
+          <div className="relative">
+            <div className="rounded-[32px] bg-white p-8 shadow-2xl">
+
+              {/* SELECT */}
+              <div className="flex items-center justify-between rounded-xl border px-4 py-3">
+                <span className="text-sm font-medium">
+                  Asbestos Exposure Claims
+                </span>
+                <span>⌄</span>
               </div>
 
-              {/* Settlement header */}
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-500">
-                  Settlement Success
-                </p>
-                <p className="text-2xl font-bold text-[#083d7a]">
+              {/* SETTLEMENT */}
+              <div className="mt-6 flex items-center justify-between">
+                <p className="text-sm text-gray-500">Settlement Success</p>
+                <p className="text-2xl font-bold text-[#0b4da2]">
                   2,45,200
                 </p>
               </div>
 
-              {/* Chart placeholder */}
-              <div className="mt-4 h-32 rounded-xl bg-slate-100" />
+              {/* GRAPH */}
+              <div className="mt-4 h-40 rounded-xl bg-slate-100 flex items-end justify-around px-6 pb-4">
+                <Bar height="35%" />
+                <Bar height="60%" />
+                <Bar height="85%" dark />
+              </div>
 
-              {/* Case summary */}
-              <div className="mt-6 grid grid-cols-3 gap-3 text-xs">
-                <div className="rounded-lg bg-slate-50 p-3 text-center">
-                  <p className="font-semibold">$100K–$1M</p>
-                  <p className="text-slate-500">Avg Settlement</p>
-                </div>
-                <div className="rounded-lg bg-slate-50 p-3 text-center">
-                  <p className="font-semibold">18–30 Mo</p>
-                  <p className="text-slate-500">Time to Settle</p>
-                </div>
-                <div className="rounded-lg bg-slate-50 p-3 text-center">
-                  <p className="font-semibold">4–5 Wks</p>
-                  <p className="text-slate-500">In Court</p>
-                </div>
+              {/* STATS */}
+              <div className="mt-6 grid grid-cols-3 gap-4 text-center text-sm">
+                <Stat title="$100K–$1M" label="Avg Settlement" />
+                <Stat title="18–30 Mo" label="Time to Settle" />
+                <Stat title="4–5 Wks" label="In Court" />
               </div>
             </div>
 
-            {/* Floating feature cards */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {[
-                "Free Case Review",
-                "Serving Nationwide",
-                "No Win, No Fee",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-xl bg-white p-4 text-center text-xs shadow"
-                >
-                  {item}
-                </div>
-              ))}
+            {/* BADGES */}
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              <Badge text="Free Case Review" />
+              <Badge text="Serving Nationwide" />
+              <Badge text="No Win, No Fee" />
             </div>
           </div>
-
         </div>
       </div>
+
+      {/* ENQUIRY TAB */}
+      <div className="absolute right-0 top-1/2 z-30 -translate-y-1/2">
+        <button className="rounded-l-xl bg-yellow-400 px-4 py-6 font-semibold text-[#0b4da2] shadow-lg rotate-[-90deg] origin-bottom-right">
+          Enquiry
+        </button>
+      </div>
+
     </section>
+  );
+}
+
+/* HELPERS */
+
+function Stat({ title, label }) {
+  return (
+    <div className="rounded-xl bg-slate-100 p-4">
+      <p className="font-semibold">{title}</p>
+      <p className="text-gray-500">{label}</p>
+    </div>
+  );
+}
+
+function Badge({ text }) {
+  return (
+    <div className="rounded-xl bg-white px-4 py-3 text-center text-sm font-medium text-[#0b4da2] shadow">
+      {text}
+    </div>
+  );
+}
+
+function Bar({ height, dark }) {
+  return (
+    <div
+      className={`w-10 rounded-md ${
+        dark ? "bg-[#0b4da2]" : "bg-[#cbd5e1]"
+      }`}
+      style={{ height }}
+    />
   );
 }

@@ -1,20 +1,26 @@
-export default function LegalCard({ title }) {
+import Image from "next/image";
+
+export default function LegalCard({ title, image }) {
+  if (!image) return null;
+
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1f3b8b] to-[#12245c] shadow-[0_18px_40px_rgba(0,0,0,0.25)]">
+    <div className="group relative h-[280px] overflow-hidden rounded-2xl">
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className="object-cover"
+        unoptimized
+      />
 
-      {/* Image placeholder */}
-      <div className="h-56 w-full bg-gradient-to-br from-blue-700 to-blue-900 opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
-      {/* Arrow button */}
-      <div className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-[#1f3b8b] transition group-hover:scale-110">
-        →
+      <div className="absolute bottom-4 left-4 right-4 text-white font-semibold">
+        {title}
       </div>
 
-      {/* Text overlay */}
-      <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent px-4 py-3">
-        <p className="text-sm font-semibold text-white">
-          {title}
-        </p>
+      <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-blue-900">
+        →
       </div>
     </div>
   );

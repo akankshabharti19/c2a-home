@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Resources() {
   return (
     <section className="bg-white py-28">
@@ -32,9 +33,14 @@ export default function Resources() {
                 </h2>
               </div>
 
-              <div className="relative h-48 w-full rounded-2xl bg-slate-200 lg:h-56">
+              <div className="relative h-48 w-full overflow-hidden rounded-2xl lg:h-56">
+                <Image
+                  src="/images/resources.jpg"
+                  alt="Resources"
+                  fill
+                  className="object-cover"
+                />
               </div>
-
             </div>
           </div>
 
