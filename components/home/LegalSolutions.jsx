@@ -11,26 +11,29 @@ export default function LegalSolutions() {
   const cards = legalSolutions[activeTab] || [];
 
   return (
-    <section className="bg-white py-28">
-      <div className="mx-auto max-w-[1300px] px-6">
+    <section className="bg-white py-16 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[1300px] px-4 sm:px-6">
         <div className="relative">
 
-          {/* Offset background */}
-          <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-[48px] bg-[#0b4da2]" />
+          {/* OFFSET BLUE BACKGROUND — DESKTOP ONLY */}
+          <div className="absolute inset-0 hidden lg:block translate-x-6 translate-y-6 rounded-[48px] bg-[#0b4da2]" />
 
-          {/* Main panel */}
-          <div className="relative rounded-[40px] bg-[#1f3b8b] px-12 py-12">
-            <h2 className="text-4xl font-serif text-yellow-400">
+          {/* MAIN PANEL */}
+          <div className="relative rounded-[32px] sm:rounded-[40px] bg-[#1f3b8b] px-6 sm:px-10 lg:px-12 py-8 sm:py-10 lg:py-12">
+
+            {/* TITLE */}
+            <h2 className="text-3xl sm:text-4xl font-serif text-yellow-400 text-center lg:text-left">
               Legal Solutions
             </h2>
 
+            {/* TABS */}
             <div className="mt-6">
               <LegalTabs active={activeTab} setActive={setActiveTab} />
             </div>
 
             {/* CARDS */}
             {cards.length > 0 ? (
-              <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {cards.map((item) => (
                   <LegalCard
                     key={item.id}
@@ -40,12 +43,12 @@ export default function LegalSolutions() {
                 ))}
               </div>
             ) : (
-              <p className="mt-10 text-white/70">
+              <p className="mt-8 text-center text-white/70">
                 No cases available in this category yet.
               </p>
             )}
-          </div>
 
+          </div>
         </div>
       </div>
     </section>

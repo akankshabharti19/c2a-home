@@ -38,36 +38,38 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#0b4da2] py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-[#0b4da2] py-16 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
-        <h2 className="mb-12 text-4xl font-serif text-white">
+        {/* HEADER */}
+        <h2 className="mb-8 sm:mb-12 text-center sm:text-left text-3xl sm:text-4xl font-serif text-white">
           Questions? Contact Us
         </h2>
 
-        <div className="space-y-4">
+        {/* FAQ LIST */}
+        <div className="space-y-4 sm:space-y-5">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="rounded-xl bg-[#08346b] px-6 py-5"
+              className="rounded-xl bg-[#08346b] px-4 sm:px-6 py-4 sm:py-5"
             >
               {/* QUESTION ROW */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="flex w-full items-center justify-between text-left"
+                className="flex w-full items-center justify-between gap-4 text-left"
               >
-                <span className="text-lg font-medium text-white">
+                <span className="text-base sm:text-lg font-medium text-white">
                   {faq.question}
                 </span>
 
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-xl font-bold text-[#0b4da2]">
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-full bg-yellow-400 text-lg sm:text-xl font-bold text-[#0b4da2]">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
 
               {/* ANSWER */}
               {openIndex === index && (
-                <p className="mt-4 text-sm text-blue-100 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-blue-100 leading-relaxed">
                   {faq.answer}
                 </p>
               )}

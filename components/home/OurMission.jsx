@@ -2,14 +2,13 @@ import Image from "next/image";
 
 export default function OurMission() {
   return (
-    <section className="relative bg-[#f4f7fa] py-28 overflow-hidden">
+    <section className="relative bg-[#f4f7fa] py-16 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-[1300px] px-6">
-
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
           <div className="relative z-10">
-            <h2 className="font-serif text-5xl text-blue-900">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-blue-900">
               Our Mission
             </h2>
 
@@ -28,9 +27,7 @@ export default function OurMission() {
           </div>
 
           {/* RIGHT VISUAL AREA */}
-          <div className="relative h-[420px]">
-
-            {/* Background image  */}
+          <div className="relative h-[260px] sm:h-[320px] lg:h-[420px]">
             <Image
               src="/images/mission-bg.jpg"
               alt="Our mission"
@@ -38,10 +35,9 @@ export default function OurMission() {
               className="object-contain opacity-20"
             />
 
-            {/* Decorative blocks */}
-            <div className="absolute right-0 top-0 h-40 w-28 rounded-2xl bg-blue-900" />
-            <div className="absolute right-16 top-32 h-48 w-28 rounded-2xl bg-yellow-400" />
-            <div className="absolute right-0 bottom-0 h-44 w-28 rounded-2xl bg-blue-900" />
+            <div className="absolute right-0 top-0 hidden sm:block h-40 w-28 rounded-2xl bg-blue-900" />
+            <div className="absolute right-16 top-32 hidden sm:block h-48 w-28 rounded-2xl bg-yellow-400" />
+            <div className="absolute right-0 bottom-0 hidden sm:block h-44 w-28 rounded-2xl bg-blue-900" />
           </div>
 
         </div>
